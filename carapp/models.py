@@ -55,3 +55,17 @@ class OrderVehicle(models.Model):
 
     def total_price(self):
         return self.quantity * self.vehicle.car_price
+
+
+
+class TeamMember(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    semester = models.IntegerField()
+    personal_link = models.URLField()
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+    class Meta:
+        ordering = ['first_name']
