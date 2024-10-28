@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Team Members</title>
+</head>
+<body>
+    <h1>Team Members</h1>
+    <ul>
+        {% for member in members %}
+            <li>
+                {{ member.first_name }} {{ member.last_name }}, Semester {{ member.semester }},
+                Link: <a href="{{ member.personal_link }}">{{ member.personal_link }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Link back to home page using URL namespacing -->
+    <p><a href="{% url 'carapp:homepage' %}">Home Page</a></p>
+</body>
+</html>
