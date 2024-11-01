@@ -12,5 +12,6 @@ urlpatterns = [
     path('aboutus/', AboutUsView.as_view(), name='aboutus'),
     path('<int:cartype_no>/', views.cardetail, name='cardetail'),
     path('team/', TeamMembersView.as_view(), name='team_members'),
-
+    path('vehicles/', views.vehicles, name='vehicles'),
+    path('order/', views.orderhere, name='orderhere'),
 ]

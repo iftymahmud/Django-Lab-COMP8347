@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Car Details</title>
-</head>
-<body>
-    <h2>Following are the Vehicles in {{ cartype.name }} with Cartype No {{ cartype.id }}:</h2>
-    <ul>
-        {% for vehicle in vehicles %}
-            <li>{{ vehicle.car_name }}</li>
-        {% endfor %}
-    </ul>
+{% extends 'carapp/base.html' %}
 
-    <!-- Link back to home page using URL namespacing -->
-    <p><a href="{% url 'carapp:homepage' %}">Home Page</a></p>
-</body>
-</html>
+{% block title %}Car Details{% endblock %}
+
+{% block myhdg %}Vehicles in {{ cartype.name }}{% endblock %}
+
+{% block body_block %}
+<h2>Following are the Vehicles in {{ cartype.name }} with Cartype No {{ cartype.id }}:</h2>
+<ul>
+  {% for vehicle in vehicles %}
+    <li>{{ vehicle.car_name }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

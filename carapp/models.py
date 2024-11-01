@@ -8,16 +8,26 @@ class CarType(models.Model):
     def __str__(self):
         return self.name
 
+
+class Feature(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
 class Vehicle(models.Model):
     car_type = models.ForeignKey(CarType, related_name='vehicles', on_delete=models.CASCADE)
     car_name = models.CharField(max_length=200)
     car_price = models.DecimalField(max_digits=10, decimal_places=2)
     inventory = models.PositiveIntegerField(default=10)
     instock = models.BooleanField(default=True)
-    description = models.TextField(null=True, blank=True)  # Optional field
+    description = models.TextField(null=True, blank=True)
+    features = models.ManyToManyField(Feature, blank=True)
 
     def __str__(self):
         return self.car_name
+
 
 class Buyer(User):
     AREA_CHOICES = [
@@ -69,3 +79,6 @@ class TeamMember(models.Model):
 
     class Meta:
         ordering = ['first_name']
+
+
+

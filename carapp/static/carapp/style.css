@@ -1,0 +1,31 @@
+/* Default background and text color */
+body {
+  background-color: #212121;
+  color: #EEEEEE;
+  font-size: 16px;
+}
+
+/* Styles for <h1> tags */
+h1 {
+  font-size: 2em;
+  color: #F3C623;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Class for horizontal bar items */
+.hbar1 {
+  display: inline;
+  margin: 15px;
+}
+
+/* Additional styles */
+a {
+  color: #FADFA1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

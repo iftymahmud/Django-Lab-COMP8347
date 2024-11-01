@@ -41,3 +41,9 @@ class TeamMembersView(View):
         return render(request, 'carapp/team_members.html', {'members': members})
 
 
+def vehicles(request):
+    vehicles_list = Vehicle.objects.all()
+    return render(request, 'carapp/vehicles.html', {'vehicles_list': vehicles_list})
+
+def orderhere(request):
+    return HttpResponse("You can place your order here.")

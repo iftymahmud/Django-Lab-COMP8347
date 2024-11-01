@@ -1,0 +1,14 @@
+{% extends 'carapp/base.html' %}
+
+{% block title %}Vehicles{% endblock %}
+
+{% block myhdg %}Available Vehicles{% endblock %}
+
+{% block body_block %}
+<ul>
+  {% for vehicle in vehicles_list %}
+    <li>{{ vehicle.car_name }} - ${{ vehicle.car_price }}</li>
+  {% endfor %}
+</ul>
+<p><a href="{% url 'carapp:orderhere' %}">Place a new order</a></p>
+{% endblock %}
