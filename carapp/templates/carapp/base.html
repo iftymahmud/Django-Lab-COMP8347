@@ -15,6 +15,17 @@
         <li class="hbar1"><a href="{% url 'carapp:vehicles' %}">View Available Vehicles</a></li>
         <li class="hbar1"><a href="{% url 'carapp:aboutus' %}">Find out about this site</a></li>
         <li class="hbar1"><a href="{% url 'carapp:homepage' %}">Click here to return to the home page</a></li>
+        <li class="hbar1"><a href="{% url 'carapp:signup' %}">Sign Up</a></li>
+
+         {% if user.is_authenticated %}
+        <li class="hbar1"><a href="{% url 'carapp:logout' %}">Logout</a></li>
+        {% else %}
+            <li class="hbar1"><a href="{% url 'carapp:login' %}">Login</a></li>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <li class="hbar1"><a href="{% url 'carapp:myorders' %}">My Orders</a></li>
+        {% endif %}
     </ul>
   </div>
 </body>
